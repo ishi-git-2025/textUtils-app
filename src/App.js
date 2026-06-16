@@ -54,7 +54,7 @@ function App() {
 
   return (
     <>
-      <Router>
+      <Router basename="/textUtils-app">
         <Navbar title="Text Utils" about="About Text Utils" mode={mode} toggleMode={toggleMode} toggleColor={toggleColor} />
         <Alert alert={alert} />
         <div className="container my-3 px-5">
