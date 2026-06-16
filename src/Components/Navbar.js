@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 // This is a functional component that represents a navigation bar. 
 // It takes in props 'title' and 'about' to display the brand name and about link respectively.
@@ -9,18 +9,18 @@ export default function Navbar({ title, about, mode, toggleMode, toggleColor }) 
     return (
         <nav className={`navbar navbar-expand-lg ${mode === 'dark' ? 'navbar-dark bg-dark' : 'navbar-light bg-light'}`}>
             <div className="container-fluid">
-                <a className="navbar-brand" href="#">{title}</a>
+                <Link className="navbar-brand" to="/">{title}</Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="#">Home</a>
+                            <Link className="nav-link active" aria-current="page" to="/">Home</Link>
                         </li>
-                        {/* <li className="nav-item">
+                        <li className="nav-item">
                             <Link className="nav-link" to="/about">{about}</Link>
-                        </li> */}
+                        </li>
                     </ul>
                     <div className={`d-flex align-items-center me-3 ${mode === 'dark' ? 'text-white' : 'text-dark'}`}>
                         Custom colors:
