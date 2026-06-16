@@ -1,0 +1,9 @@
+.dark-placeholder::placeholder {
+    color: white;
+    opacity: 0.9;
+}
+
+.light-placeholder::placeholder {
+    color: black;
+    opacity: 0.8;
+}

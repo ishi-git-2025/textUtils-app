@@ -32,21 +32,18 @@ function App() {
   }
 
   const toggleColor = (color) => {
-    document.title = `Text Utils - ${color.charAt(0).toUpperCase() + color.slice(1)} Mode`;
+    // document.title = `Text Utils - ${color.charAt(0).toUpperCase() + color.slice(1)} Mode`;
+    setMode('light');
     if (color === 'primary') {
-      setMode('primary');
       document.body.style.backgroundColor = '#0d6efd';
       showAlert('Blue mode has been enabled', 'primary');
     } else if (color === 'danger') {
-      setMode('danger');
       document.body.style.backgroundColor = '#dc3545';
       showAlert('Red mode has been enabled', 'danger');
     } else if (color === 'success') {
-      setMode('success');
       document.body.style.backgroundColor = '#198754';
       showAlert('Green mode has been enabled', 'success');
     } else if (color === 'warning') {
-      setMode('warning');
       document.body.style.backgroundColor = '#ffc107';
       showAlert('Yellow mode has been enabled', 'warning');
     }
@@ -59,7 +56,7 @@ function App() {
         <Alert alert={alert} />
         <div className="container my-3 px-5">
           <Routes>
-            <Route exact path="/about" element={<About />} />
+            <Route exact path="/about" element={<About mode={mode} />} />
             <Route exact path="/" element={<TestForm heading="Enter your text to analyze" mode={mode} showAlert={showAlert} />} />
           </Routes>
         </div>
