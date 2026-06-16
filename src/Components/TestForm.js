@@ -46,9 +46,9 @@ export default function TestForm({ heading, mode, showAlert }) {
                 <h1>Text Summary</h1>
                 <ul>
                     <li>Text has {text.split(".").length - 1} sentences.</li>
-                    <li>Your text contains {text.trim().length} characters.</li>
-                    <li>Your text contains {text.split(/[ ]+/).filter((word) => word.length > 0).length} words.</li>
-                    <li>It will take approximately {0.008 * text.split(/[ ]+/).filter((word) => word.length > 0).length} minutes to read.</li>
+                    <li>Your text contains {text.replace(/\s+/g, '').length} characters.</li>
+                    <li>Your text contains {text.split(/\s+/).filter((word) => word.length > 0).length} words.</li>
+                    <li>It will take approximately {0.008 * text.split(/\s+/).filter((word) => word.length > 0).length} minutes to read.</li>
                 </ul>
                 <h2>Preview</h2>
                 <p className="display-6 lead">{text.length > 0 ? text : "Nothing to preview!"}</p>
